@@ -1,0 +1,24 @@
+name: "SaaS Growth Companies"
+firmographics:
+  industry:           ["Software", "SaaS", "Technology"]
+  employee_range:     [50, 500]
+  geography:          ["US", "UK", "India", "Singapore"]
+  tech_stack_must_have: ["Salesforce", "HubSpot"]
+intent_signals:
+  positive:
+    - "Series A/B/C funding in last 90 days"
+    - "VP Sales hire in last 60 days"
+    - "SDR/BDR job postings active"
+    - "CRM migration keywords in job descriptions"
+  negative:
+    - "Hiring freeze announced"
+    - "Layoff news in last 30 days"
+scoring_weights:
+  firmographic_fit:       0.35
+  intent_signal_strength: 0.40
+  engagement_history:     0.15
+  data_completeness:      0.10
+output:
+  hot_threshold:     0.75
+  warm_threshold:    0.50
+  max_leads_per_run: 100

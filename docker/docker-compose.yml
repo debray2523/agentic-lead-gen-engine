@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  pipeline:
+    build: ..
+    env_file: ../.env
+    volumes:
+      - ../output:/app/output
+      - ../data:/app/data
+    command: python main.py --icp configs/sample_icp.yaml
+
+  api:
+    build: ..
+    env_file: ../.env
+    ports:
+      - "8000:8000"
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000
